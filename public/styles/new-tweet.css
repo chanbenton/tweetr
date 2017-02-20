@@ -1,0 +1,29 @@
+h2 {
+  border-bottom: 1px solid black;
+}
+
+section.new-tweet{
+  margin: 0 2em auto;
+  padding: 0 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+section.new-tweet textarea{
+  padding-top: 5px;
+  padding-left: 5px;
+  width: 100%;
+}
+
+section.new-tweet .form-container {
+  margin-bottom: 1em;
+}
+
+/*section.new-tweet .form-container input{
+  float:left;
+}*/
+
+section.new-tweet .form-container .counter{
+  float:right;
+}

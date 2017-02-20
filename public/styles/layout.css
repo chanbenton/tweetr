@@ -20,6 +20,14 @@ body {
   background-color: #eee;
 }
 
+main.container {
+  margin: auto;
+  margin-top: 140px;
+  width: 450px;
+  align: center;
+  background-color: white;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
