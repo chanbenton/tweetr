@@ -19,7 +19,6 @@
     <!-- New-tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -34,7 +33,7 @@
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
-
+    <!-- Toronto Ruby Brigade // meets at shopify -->
    
     <!-- Top nav bar (fixed) -->
 
@@ -45,12 +44,16 @@
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
-          
-          <section class ="form-container">
-            <input type="submit" value="Tweet"/>
+          <input type="submit" value="Tweet"/>
           <span class="counter">140</span>
-          </section>
-          
+          <script> 
+            // Do this from composer-char-counter, template event-listener within <script>
+            document.addEventListener("input", function() {
+              // counter.innerHTML($counter.length - 140), if $("counter").value.length > 140, then CSS-color: red;
+              console.log(event);
+            });
+
+          </script>
         </form>
       </section>
     </main>
