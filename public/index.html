@@ -43,17 +43,27 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
+          
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet"/>
           <span class="counter">140</span>
           <script> 
-            // Do this from composer-char-counter, template event-listener within <script>
-            document.addEventListener("input", function() {
-              // counter.innerHTML($counter.length - 140), if $("counter").value.length > 140, then CSS-color: red;
-              console.log(event);
-            });
-
-          </script>
+          function charCount(string){
+            let chars = 140 - string.value.length;
+            if (chars < 0){
+            // change text to red, amend chars to span.counter's value
+            } else {
+            // amend chars to span.counter's value
+            }
+          }
+          $("section.new-tweet textarea").keyup(charCounter(this.value));
+          $("section.new-tweet textarea").change(charCounter(this.value));
+            // // Do this from composer-char-counter, template event-listener within <script>
+            // document.addEventListener("input", function() {
+            // //counter.innerHTML($counter.length - 140), if this.val.length > 140, then CSS-color: red;
+            // console.log(event);
+          
+          </script>           
         </form>
       </section>
     </main>
