@@ -28,6 +28,10 @@ main.container {
   background-color: white;
 }
 
+.invalid{
+  color: red;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
