@@ -8,6 +8,7 @@ section.tweet-list article{
 section.tweet-list article header{
   background-color: #eee;
   overflow: auto;
+  padding-bottom: 10px;
 }
 
 section.tweet-list article header.tweeter-profile .avatar {
