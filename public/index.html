@@ -47,8 +47,7 @@
 
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
-          
+        <form method="POST" action="/tweets">          
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet"/>
           <span class="counter">140</span>
@@ -63,24 +62,11 @@
               $(this).parent().find('.counter').removeClass('invalid').text(chars);
             }
           }
-
           $("section.new-tweet textarea").keyup(charCount).change(charCount);
           </script>           
         </form>
       </section>
-      <section class="tweet-list">
-        <!-- [user{} name, avatars{S/M/L}, handle (@___), content {text: le "mdr"}, time}]-->
-        <article>
-          <header class="tweeter-profile">
-            <img class="avatar" src="/images/avatar.png">
-            <span class="full-name">Hello Thar</span>
-            <span class="alias">@mnko</span>
-          </header>
-          <p class="message">The best shortcut is the long way: work hard.</p>
-          <!-- text padding, line, 'x days ago'-->
-          <footer class="timestamp">7 days ago</footer>
-        </article>
-
+      <section id="tweet-list">
       </section>
     </main>
   </body>
