@@ -18,9 +18,19 @@ section.new-tweet textarea{
   box-sizing: border-box;
 }
 section.new-tweet .counter{
-  float:right; 
+  float: right; 
 }
 
-section.new-tweet .counter.invalid{
+.invalid{
   color: red;
+}
+
+#too-short,
+#too-long{
+  display:none; 
+}
+
+#too-short.show,
+#too-long.show{
+  display:initial;
 }

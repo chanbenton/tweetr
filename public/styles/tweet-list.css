@@ -37,6 +37,7 @@ section#tweet-list article .msg{
 
 section#tweet-list footer{
   border-top: 1px solid lightgrey;
+  
 }
 
 section#tweet-list footer .timestamp{
@@ -46,8 +47,4 @@ section#tweet-list footer .timestamp{
 }
 section#tweet-list article:hover{
   opacity:1.0;
-}
-
-.invalid{
-  color: red;
 }
