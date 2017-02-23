@@ -26,6 +26,7 @@ const createTweetElement = (tweet) => {
 }
 
 const renderTweets = (arrTweets) => {
+    $('#tweet-list').empty();
     for (let tweet of arrTweets){
       let $tweet = createTweetElement(tweet);
       $('#tweet-list').append($tweet);
@@ -39,7 +40,7 @@ window.onload = function(){
       method: 'GET',
       dataType: "json",
       success: function(arrTweets){
-        renderTweets(arrTweets);
+        renderTweets(arrTweets.reverse());
       }
     });
   };
@@ -61,8 +62,18 @@ window.onload = function(){
       $.ajax({
         url: '/tweets',
         method: 'POST',
-        data: {text:msg}
+        data: {text:msg},
+        success: function(){
+          loadTweets();
+        }
       });
+      $("#tweet-form textarea").val("");
     }
   })
+  $("#nav-bar .compose-btn").click(function(){
+    $("section.new-tweet").slideToggle("slow");
+    if ($("section.new-tweet").is(':visible')){
+      $("section.new-tweet textarea").focus();
+    }
+  });
 };

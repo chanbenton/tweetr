@@ -16,3 +16,18 @@
   font-size: 2em;
   line-height: 2.5em;
 }
+
+#nav-bar .compose-btn{
+    font-size: 2em;
+    float: right;
+    margin-top: 20px;
+    padding: 5px;
+    border: black solid 1px;
+    border-radius: 5px;
+    background-color: #e7fdff;
+    color: #00a087;
+}
+#nav-bar .compose-btn:hover{
+    background-color: white;
+    color:black;
+}
