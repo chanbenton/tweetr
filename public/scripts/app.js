@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 const createTweetElement = (tweet) => {
   let article = $("<article></article>");
   
@@ -19,15 +13,16 @@ const createTweetElement = (tweet) => {
   let footer = $("<footer></footer>").addClass("aux");
   
   let timestamp = $("<span></span>").addClass("timestamp").text(new Date(tweet.created_at).toDateString());
-  footer.append(timestamp);
-  //    <!-- border line, create icons. Use silk ones.-->
-
+  let icons = $("<span></span>").addClass("icons").text('⚑ 🔁 ❤');
+  footer.append(timestamp, icons);
+  
   return article.append(header,msg,footer);
 }
 
 const renderTweets = (arrTweets) => {
     $('#tweet-list').empty();
-
+    
+    // Tweets rendered one by one
     for (let tweet of arrTweets){
       let $tweet = createTweetElement(tweet);
       $('#tweet-list').append($tweet);
@@ -35,6 +30,8 @@ const renderTweets = (arrTweets) => {
 }
 
 window.onload = function(){
+
+  // Tweets loaded via this function
   const loadTweets = () => {
     $.ajax({
       url: '/tweets',
@@ -57,6 +54,7 @@ window.onload = function(){
     //let trimMsg = msg.trim();
     $("#too-short, #too-long, #all-spaces").removeClass("show");
 
+    // Verifies that the field
     if (msg.length === 0) {
       $("#too-short").addClass("show");
     } else if (msg.trim().length === 0){

@@ -5,6 +5,10 @@ section#tweet-list article{
   border-radius: 5px;
 }
 
+section#tweet-list article:hover{
+  opacity:1.0;
+}
+
 section#tweet-list article header{
   background-color: #eee;
   overflow: auto;
@@ -35,16 +39,24 @@ section#tweet-list article .msg{
   padding: 15px;
 }
 
-section#tweet-list footer{
+section#tweet-list article footer{
   border-top: 1px solid lightgrey;
   
 }
 
-section#tweet-list footer .timestamp{
+section#tweet-list article footer .timestamp{
   padding: 5px 5px 5px;
   line-height: 2em;
   font-size:0.8em;
 }
-section#tweet-list article:hover{
-  opacity:1.0;
+
+section#tweet-list article footer .icons{
+  display: none;
+  padding-right: 5px;
+  float:right;
+}
+
+section#tweet-list article:hover footer .icons{
+  display: inherit;
+  color: #00a087;
 }

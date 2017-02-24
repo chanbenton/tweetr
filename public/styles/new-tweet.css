@@ -26,11 +26,13 @@ section.new-tweet .counter{
   color: red;
 }
 
+#all-spaces,
 #too-short,
 #too-long{
   display:none; 
 }
 
+#all-spaces.show,
 #too-short.show,
 #too-long.show{
   display:initial;
