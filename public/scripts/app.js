@@ -27,6 +27,7 @@ const createTweetElement = (tweet) => {
 
 const renderTweets = (arrTweets) => {
     $('#tweet-list').empty();
+
     for (let tweet of arrTweets){
       let $tweet = createTweetElement(tweet);
       $('#tweet-list').append($tweet);
@@ -45,16 +46,21 @@ window.onload = function(){
     });
   };
   loadTweets();
+
   $("#tweet-form").submit(ev => {
     ev.preventDefault();
-  })
+  });
+        
+  // Posts tweet based on input if 
   $("#tweet-form input").click(ev => {
     let msg = $("#tweet-form textarea").val();
-    $("#too-short, #too-long").removeClass("show");
+    //let trimMsg = msg.trim();
+    $("#too-short, #too-long, #all-spaces").removeClass("show");
 
     if (msg.length === 0) {
       $("#too-short").addClass("show");
-
+    } else if (msg.trim().length === 0){
+      $("#all-spaces").addClass("show");
     } else if (msg.length > 140) {
       $("#too-long").addClass("show");
       
@@ -71,7 +77,9 @@ window.onload = function(){
     }
   })
   $("#nav-bar .compose-btn").click(function(){
+
     $("section.new-tweet").slideToggle("slow");
+    
     if ($("section.new-tweet").is(':visible')){
       $("section.new-tweet textarea").focus();
     }
